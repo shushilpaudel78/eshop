@@ -32,7 +32,7 @@ export const CartGrid = () => {
         {
             name: "Product 6",
             price: 59.99,
-            image: "/images/cart1.jpg"
+            // image: "/images/cart1.jpg"
         }
     ];
 

@@ -4,7 +4,9 @@ import { FaFacebookF, FaTwitter, FaInstagram, FaLinkedinIn } from "react-icons/f
 
 export default function Footer() {
     return (
-        <footer className="bg-gradient-to-r from-purple-700 via-pink-500 to-red-400 pt-10">
+        <footer
+            style={{ clipPath: 'polygon(38% 0, 63% 18%, 100% 0, 100% 100%, 0 100%, 0 1%, 28% 20%)' }}
+            className="bg-gradient-to-r pt-40 lg:pt-20  from-purple-700 via-pink-500 to-red-400 ">
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8 pb-10">
 
                 {/* Brand Info */}

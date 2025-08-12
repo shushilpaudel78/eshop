@@ -7,32 +7,32 @@ export const CartGrid = () => {
         {
             name: "Product 1",
             price: 29.99,
-            image: "/images/cart.jpg"
+            photo: "/images/cart.jpg"
         },
         {
             name: "Product 2",
             price: 49.99,
-            image: "/images/cart1.jpg" 
+            photo: "/images/cart.jpg" 
         },
         {
             name: "Product 3",
             price: 19.99,
-            image: "/images/cart1.jpg"
+            photo: "/images/cart.jpg"
         },
         {
             name: "Product 4",
             price: 39.99,
-            image: "/images/cart1.jpg"
+            photo: "/images/cart.jpg"
         },
         {
             name: "Product 5",
             price: 24.99,
-            image: "/images/cart1.jpg"
+            photo: "/images/cart.jpg"
         },
         {
             name: "Product 6",
             price: 59.99,
-            // image: "/images/cart1.jpg"
+            photo: "/images/cart.jpg"
         }
     ];
 
@@ -47,7 +47,8 @@ export const CartGrid = () => {
                             key={index}
                             name={item.name}
                             price={item.price}
-                            image={item.image}
+                            photo={item.photo}
+
                         />
                     ))}
 

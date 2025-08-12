@@ -1,39 +1,70 @@
 'use client';
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Link from "next/link";
+import { FaCartArrowDown } from "react-icons/fa";
 // import { FaBars } from "react-icons/fa6";
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
+  const [cartCount, setCartCount] = useState(0);
+
+  const getCartCount = () => {
+    const cart = JSON.parse(localStorage.getItem("cart") || "[]");
+    const total = cart.reduce((sum: number, item: any) => sum + item.quantity, 0);
+    setCartCount(total);
+  };
+
+  useEffect(() => {
+    getCartCount(); // Initial load
+
+    const handleUpdate = () => getCartCount();
+    window.addEventListener("cartUpdated", handleUpdate);
+
+    return () => window.removeEventListener("cartUpdated", handleUpdate);
+  }, []);
 
   return (
-    <nav className="bg-gradient-to-r from-purple-700 via-pink-500 to-red-500 p-4 shadow-lg">
+    <nav className="bg-gradient-to-r fixed w-full z-90 from-purple-700 via-pink-500 to-red-500 p-4 shadow-lg">
       <div className="max-w-7xl mx-auto flex-wrap  flex items-center justify-between">
 
         <div className="text-white font-bold text-xl tracking-wide  text-nowrap">
-          <Link href="#">Sp Tech</Link>
+          <Link href="#"
+            className="text-[30px] font-cursive">Sp Tech</Link>
         </div>
 
         {/* Desktop Menu */}
         <div className="hidden md:flex space-x-6 text-white font-medium">
-          <Link href="#" className="hover:text-yellow-300 transition">Home</Link>
+          <Link href="/" className="hover:text-yellow-300 transition">Home</Link>
           <Link href="#" className="hover:text-yellow-300 transition">Contact</Link>
           <Link href="#" className="hover:text-yellow-300 transition">Blog</Link>
           <Link href="#" className="hover:text-yellow-300 transition">Details</Link>
         </div>
 
-        <div className="text-white flex gap-2">
+        <div className="text-white flex flex-wrap items-center  lg:flex-nowrap gap-4">
+
+          {cartCount > 0 && (
+            <div className="relative flex  items-center justify-center w-10 h-10 bg-purple-600 hover:bg-purple-700 rounded-full transition cursor-pointer">
+              <span className="absolute -top-2 -right-3 bg-white text-pink-600 text-xs font-bold px-2 py-0.5 rounded-full">
+                {cartCount}
+              </span>
+
+              <Link href='/checkout'>
+                <FaCartArrowDown className="text-2xl  mr-10 md:mr-0 cursor-pointer" />
+              </Link>
+            </div>
+          )}
+
           <input
-            className="bg-white py-2 px-2 rounded-md text-gray-800 focus:outline-none focus:ring-2 focus:ring-purple-300"
+            className="bg-white py-2 px-2 hidden md:block rounded-md text-gray-800 focus:outline-none focus:ring-2 focus:ring-purple-300"
             type="text " />
           <button
-            className="bg-purple-600 hover:bg-purple-700 cursor-pointer text-white font-semibold px-4 py-2 rounded-md transition">
+            className="bg-purple-600 hidden md:block hover:bg-purple-700 cursor-pointer text-white font-semibold px-4 py-2 rounded-md transition">
             Search
           </button>
         </div>
 
         {/* Mobile Menu Toggle */}
-        <div className="md:hidden">
+        <div className="md:hidden absolute right-4 top-3">
           <button
             onClick={() => setIsOpen(!isOpen)}
             className="text-white focus:outline-none"
@@ -57,11 +88,11 @@ export default function Navbar() {
 
       {/* Mobile Menu */}
       {isOpen && (
-        <div className="md:hidden mt-2 px-4 space-y-2">
-          <Link href="#"><a className="block py-2 text-white hover:bg-pink-600 rounded">Home</a></Link>
-          <Link href="#"><a className="block py-2 text-white hover:bg-pink-600 rounded">About</a></Link>
-          <Link href="#"><a className="block py-2 text-white hover:bg-pink-600 rounded">Services</a></Link>
-          <Link href="#"><a className="block py-2 text-white hover:bg-pink-600 rounded">Contact</a></Link>
+        <div className="md:hidden mt-2 px-4 space-y-2 flex flex-col w-full items-center">
+          <Link href="#" className="block py-2 text-white hover:bg-pink-600 rounded">Home</Link>
+          <Link href="#" className="block py-2 text-white hover:bg-pink-600 rounded">About</Link>
+          <Link href="#" className="block py-2 text-white hover:bg-pink-600 rounded">Services</Link>
+          <Link href="#" className="block py-2 text-white hover:bg-pink-600 rounded">Contact</Link>
         </div>
       )}
     </nav>

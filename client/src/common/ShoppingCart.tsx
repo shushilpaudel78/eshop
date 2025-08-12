@@ -1,7 +1,7 @@
 // components/CartItem.tsx
 'use client';
 
-import { FaTrash, FaPlus, FaMinus } from "react-icons/fa";
+import { FaPlus, FaMinus } from "react-icons/fa";
 import { useState } from "react";
 import Image from "next/image";
 
@@ -83,9 +83,7 @@ export default function CartItem({ name, price, photo }: CartItemProps) {
 
         <div className="text-right">
           <p className="font-semibold">${(price * quantity).toFixed(2)}</p>
-          <button className="text-red-500 hover:text-red-700 mt-1">
-            <FaTrash />
-          </button>
+          
         </div>
       </div>
     </div>

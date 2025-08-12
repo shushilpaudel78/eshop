@@ -38,7 +38,7 @@ export default function Footer() {
                             placeholder="Email address"
                             className="w-full p-2 rounded-l-md text-black border-none outline-none bg-white focus:ring-2 focus:ring-purple-300"
                         />
-                        <button className="bg-green-600 px-4 text-white rounded-r-md hover:bg-green-700">
+                        <button className="bg-green-600 px-4 cursor-pointer text-white rounded-r-md hover:bg-green-700">
                             Subscribe
                         </button>
                     </form>

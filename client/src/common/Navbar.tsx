@@ -3,10 +3,15 @@ import { useState, useEffect } from "react";
 import Link from "next/link";
 import { FaCartArrowDown } from "react-icons/fa";
 // import { FaBars } from "react-icons/fa6";
+import { usePathname } from "next/navigation";
+import { FaArrowRight } from "react-icons/fa";
 
 export default function Navbar() {
+
+
   const [isOpen, setIsOpen] = useState(false);
   const [cartCount, setCartCount] = useState(0);
+  const pathname = usePathname();
 
   const getCartCount = () => {
     const cart = JSON.parse(localStorage.getItem("cart") || "[]");
@@ -34,10 +39,33 @@ export default function Navbar() {
 
         {/* Desktop Menu */}
         <div className="hidden md:flex space-x-6 text-white font-medium">
-          <Link href="/" className="hover:text-yellow-300 transition">Home</Link>
-          <Link href="#" className="hover:text-yellow-300 transition">Contact</Link>
-          <Link href="#" className="hover:text-yellow-300 transition">Blog</Link>
-          <Link href="#" className="hover:text-yellow-300 transition">Details</Link>
+
+          <Link href="/" className="hover:text-yellow-300 transition flex items-center gap-2 flex-nowrap">
+            {pathname == '/' && (
+              <div className=""><FaArrowRight /></div>
+            )}
+            Home
+          </Link>
+
+          <Link href="/contact" className="hover:text-yellow-300 flex gap-1 items-center flex-nowrap transition">
+            {pathname == '/contact' && (
+              <div className=""><FaArrowRight /></div>
+            )}
+            Contact
+          </Link>
+
+          <Link href="/about" className="hover:text-yellow-300 transition flex items-center gap-1 flex-nowrap">
+            {pathname == '/about' && (
+              <div className=""><FaArrowRight /></div>
+            )}
+            About
+          </Link>
+
+          <Link href="details" className="hover:text-yellow-300 transition flex flex-nowrap gap-1 items-center">
+            {pathname == '/details' && (
+              <div className=""><FaArrowRight /></div>
+            )}
+            Details</Link>
         </div>
 
         <div className="text-white flex flex-wrap items-center  lg:flex-nowrap gap-4">
@@ -89,10 +117,10 @@ export default function Navbar() {
       {/* Mobile Menu */}
       {isOpen && (
         <div className="md:hidden mt-2 px-4 space-y-2 flex flex-col w-full items-center">
-          <Link href="#" className="block py-2 text-white hover:bg-pink-600 rounded">Home</Link>
-          <Link href="#" className="block py-2 text-white hover:bg-pink-600 rounded">About</Link>
-          <Link href="#" className="block py-2 text-white hover:bg-pink-600 rounded">Services</Link>
-          <Link href="#" className="block py-2 text-white hover:bg-pink-600 rounded">Contact</Link>
+          <Link href="/" className="block py-2 text-white hover:bg-pink-600 rounded">Home</Link>
+          <Link href="/about" className="block py-2 text-white hover:bg-pink-600 rounded">About</Link>
+          <Link href="/blog" className="block py-2 text-white hover:bg-pink-600 rounded">Services</Link>
+          <Link href="/contact" className="block py-2 text-white hover:bg-pink-600 rounded">Contact</Link>
         </div>
       )}
     </nav>

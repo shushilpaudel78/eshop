@@ -11,7 +11,7 @@ type CartItemProps = {
   photo: string;
 };
 
-export default function ShopingCart({ name, price, photo }: CartItemProps) {
+export default function CartItem({ name, price, photo }: CartItemProps) {
   const [quantity, setQuantity] = useState(1);
 
   const handleQtyChange = (delta: number) => {
@@ -40,9 +40,9 @@ export default function ShopingCart({ name, price, photo }: CartItemProps) {
   };
 
   return (
-    <div className="flex w-full flex-col py-5 bg-white p-4 border border-pink-500 rounded-lg shadow-md max-w-2xl mx-auto">
+    <div className="flex w-full flex-col bg-white p-4 border border-pink-500 rounded-lg shadow-md max-w-2xl mx-auto">
       {/* Product Info */}
-      <div className="flex justify-center items-center gap-4">
+      <div className="flex flex-col items-center gap-4">
         <Image
           src={photo}
           width={80}
@@ -57,7 +57,7 @@ export default function ShopingCart({ name, price, photo }: CartItemProps) {
       </div>
 
       {/* Quantity & Actions */}
-      <div className="flex  items-center gap-6 mt-4">
+      <div className="flex flex-col items-center gap-6 mt-4">
         <div className="flex items-center bg-gray-100 rounded px-2 py-1">
           <button
             onClick={() => handleQtyChange(-1)}

@@ -21,10 +21,10 @@ export default function Footer() {
                 <div>
                     <h3 className="text-white font-semibold mb-4">Quick Links</h3>
                     <ul className="space-y-2 text-sm">
-                        <li><Link href="#" className="hover:text-white">Home </Link></li>
-                        <li><Link href="#" className="hover:text-white">Shop </Link></li>
-                        <li><Link href="#" className="hover:text-white">About Us </Link></li>
-                        <li><Link href="#" className="hover:text-white">Contact </Link></li>
+                        <li><Link href="/" className="hover:text-white">Home </Link></li>
+                        <li><Link href="/shop" className="hover:text-white">Shop </Link></li>
+                        <li><Link href="/about" className="hover:text-white">About Us </Link></li>
+                        <li><Link href="/contact" className="hover:text-white">Contact </Link></li>
                     </ul>
                 </div>
 
@@ -52,7 +52,7 @@ export default function Footer() {
                 <div className="flex  gap-2 space-x-4 text-white text-lg">
                     <Link href="#"><FaFacebookF className="hover:text-blue-500" /></Link>
                     <Link href="#"><FaTwitter className="hover:text-sky-400" /></Link>
-                    <Link href="#"><FaInstagram className="hover:text-pink-500" /></Link>
+                    <Link href="#"><FaInstagram className="hover:text-blue-400" /></Link>
                     <Link href="#"><FaLinkedinIn className="hover:text-blue-400" /></Link>
                 </div>
             </div>

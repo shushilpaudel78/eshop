@@ -47,12 +47,13 @@ export default function Navbar() {
             Home
           </Link>
 
-          <Link href="/contact" className="hover:text-yellow-300 flex gap-1 items-center flex-nowrap transition">
-            {pathname == '/contact' && (
+          <Link href="/shop" className="hover:text-yellow-300 transition flex flex-nowrap gap-1 items-center">
+            {pathname == '/shop' && (
               <div className=""><FaArrowRight /></div>
             )}
-            Contact
+            Shop
           </Link>
+
 
           <Link href="/about" className="hover:text-yellow-300 transition flex items-center gap-1 flex-nowrap">
             {pathname == '/about' && (
@@ -61,11 +62,13 @@ export default function Navbar() {
             About
           </Link>
 
-          <Link href="details" className="hover:text-yellow-300 transition flex flex-nowrap gap-1 items-center">
-            {pathname == '/details' && (
+
+          <Link href="/contact" className="hover:text-yellow-300 flex gap-1 items-center flex-nowrap transition">
+            {pathname == '/contact' && (
               <div className=""><FaArrowRight /></div>
             )}
-            Details</Link>
+            Contact
+          </Link>
         </div>
 
         <div className="text-white flex flex-wrap items-center  lg:flex-nowrap gap-4">

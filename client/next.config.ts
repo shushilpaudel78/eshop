@@ -12,13 +12,19 @@ module.exports = {
     remotePatterns: [
       {
         protocol: 'https',
-        hostname: 'randomuser.me ',
+        hostname: 'randomuser.me',
         port: '',
         pathname: '/**',
       },
        {
         protocol: 'https',
         hostname: 'cdn-icons-png.flaticon.com',
+        port: '',
+        pathname: '/**',
+      },
+       {
+        protocol: 'https',
+        hostname: 'images.unsplash.com',
         port: '',
         pathname: '/**',
       },

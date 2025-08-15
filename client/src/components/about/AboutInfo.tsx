@@ -6,20 +6,20 @@ export const AboutInfo: React.FC = () => {
     return (
         <section className="bg-white py-16 px-6 pt-30">
             <h2 className="text-4xl font-bold text-gray-800 mb-6 text-center">About Me</h2>
-            <div className="max-w-6xl mx-auto grid md:grid-cols-2 gap-12 items-center">
+            <div className="max-w-6xl mx-auto grid md:grid-cols-2 gap-12 items-center pt-10">
 
                 {/* Image Section */}
-                <div className="relative w-full h-[400px] rounded-2xl overflow-hidden shadow-lg">
+                <div className="relative w-full h-[400px] rounded-2xl  overflow-hidden shadow-lg">
                     <Image
-                        src="/images/waterfall.jpg" // Replace with your image path
+                        src="/images/profile.png" // Replace with your image path
                         alt="About me"
                         fill
-                        className="object-cover hover:scale-105 transition-transform duration-500"
+                        className="object-contain hover:scale-105 transition-transform duration-500"
                     />
                 </div>
 
                 {/* Text Section */}
-                <div>
+                <div className="py-5">
                     <p className="text-gray-600 leading-relaxed mb-6">
                         I am a passionate software developer with expertise in modern web
                         technologies, including Next.js, React, Node.js, and Tailwind CSS.

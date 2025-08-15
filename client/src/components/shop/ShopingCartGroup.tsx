@@ -6,12 +6,12 @@ export const ShopingCartGroup = () => {
   const [searchTerm, setSearchTerm] = useState("");
 
   const cartItems = [
-    { name: "Product 1", price: 29.99, photo: "/images/cart.jpg" },
-    { name: "Product 2", price: 49.99, photo: "/images/cart.jpg" },
-    { name: "Product 3", price: 19.99, photo: "/images/cart.jpg" },
-    { name: "Product 4", price: 39.99, photo: "/images/cart.jpg" },
-    { name: "Product 5", price: 24.99, photo: "/images/cart.jpg" },
-    { name: "Product 6", price: 59.99, photo: "/images/cart.jpg" },
+    { name: "Vivo", price: 29.99, photo: "/images/mobile1.png" },
+    { name: "Vivo Galaxy", price: 49.99, photo: "/images/mobile2.png" },
+    { name: "Vivo Prime", price: 19.99, photo: "/images/mobile3.png" },
+    { name: "Vivo Light", price: 39.99, photo: "/images/mobile4.png" },
+    { name: "Vivo", price: 24.99, photo: "/images/mobile1.png" },
+    { name: "Vivo Light", price: 59.99, photo: "/images/mobile2.png" },
   ];
 
   // Filter items based on search term

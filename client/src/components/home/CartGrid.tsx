@@ -5,35 +5,35 @@ export const CartGrid = () => {
 
     const cartItems = [
         {
-            name: "Product 1",
+            name: "Vivo",
             price: 29.99,
-            photo: "/images/cart.jpg"
+            photo: "/images/mobile1.png"
         },
         {
-            name: "Product 2",
+            name: "Vivo Galaxy",
             price: 49.99,
-            photo: "/images/cart.jpg" 
+            photo: "/images/mobile2.png"
         },
         {
-            name: "Product 3",
+            name: "Vivo Prime",
             price: 19.99,
-            photo: "/images/cart.jpg"
+            photo: "/images/mobile3.png"
         },
         {
-            name: "Product 4",
+            name: "Vivo Light",
             price: 39.99,
-            photo: "/images/cart.jpg"
+            photo: "/images/mobile4.png"
         },
         {
-            name: "Product 5",
+            name: "Vivo",
             price: 24.99,
-            photo: "/images/cart.jpg"
+            photo: "/images/mobile1.png"
         },
         {
-            name: "Product 6",
+            name: "Vivo Light",
             price: 59.99,
-            photo: "/images/cart.jpg"
-        }
+            photo: "/images/mobile2.png"
+        },
     ];
 
 
@@ -41,7 +41,7 @@ export const CartGrid = () => {
         <div>
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
                 <h2 className="text-2xl font-bold mb-6">Your Shopping Cart</h2>
-                
+
 
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
                     {cartItems.map((item, index) => (

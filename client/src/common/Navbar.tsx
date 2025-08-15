@@ -5,6 +5,7 @@ import { FaCartArrowDown } from "react-icons/fa";
 // import { FaBars } from "react-icons/fa6";
 import { usePathname } from "next/navigation";
 import { FaArrowRight } from "react-icons/fa";
+import { FaRegUser } from "react-icons/fa";
 
 export default function Navbar() {
 
@@ -34,7 +35,7 @@ export default function Navbar() {
 
         <div className="text-white font-bold text-xl tracking-wide  text-nowrap">
           <Link href="#"
-            className="text-[30px] font-cursive">Sp Tech</Link>
+            className="text-[30px] font-cursive font-bol">Sp Electronic</Link>
         </div>
 
         {/* Desktop Menu */}
@@ -92,6 +93,9 @@ export default function Navbar() {
             className="bg-purple-600 hidden md:block hover:bg-purple-700 cursor-pointer text-white font-semibold px-4 py-2 rounded-md transition">
             Search
           </button>
+          <Link href="/login" className="cursor-pointer text-white text-2xl">
+            <FaRegUser />
+          </Link>
         </div>
 
         {/* Mobile Menu Toggle */}

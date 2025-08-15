@@ -10,9 +10,11 @@ import 'swiper/css/navigation';
 
 export const ShowProduct = () => {
     const products = [
-        '/images/owl.jpg',
-        '/images/birds.jpg',
-        '/images/nature.jpg',
+        '/images/mobile1.png',
+        '/images/mobile2.png',
+        '/images/mobile3.png',
+        '/images/mobile4.png',
+
     ];
 
     return (
@@ -42,8 +44,8 @@ export const ShowProduct = () => {
                     <div className="h-[400px] w-2/3 relative">
                         <Swiper
                             modules={[Navigation, Autoplay]}
-                            spaceBetween={30}
-                            slidesPerView={1}
+                            spaceBetween={10}
+                            slidesPerView={2}
                             loop={false}
                             autoplay={{
                                 delay: 3000,
@@ -60,7 +62,7 @@ export const ShowProduct = () => {
                                         // width={500}
                                         // height={500}
                                         fill
-                                        className="object-cover rounded-xl shadow-xl overflow-hidden px-13"
+                                        className="object-contain rounded-xl shadow-xl overflow-hidden px-13"
                                     />
                                 </SwiperSlide>
                             ))}

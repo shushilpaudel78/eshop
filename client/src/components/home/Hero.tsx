@@ -49,7 +49,7 @@ export default function Hero() {
 
           </div>
           <Image
-            src="/images/owl.jpg" //
+            src="/images/bg_computer.jpg" //
             alt="Shopping Hero"
             width={500}
             height={700}

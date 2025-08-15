@@ -40,7 +40,7 @@ export default function ShopingCart({ name, price, photo }: CartItemProps) {
   };
 
   return (
-    <div className="flex w-full flex-col py-5 bg-white p-4 border border-pink-500 rounded-lg shadow-md max-w-2xl mx-auto">
+    <div className="flex w-full flex-col py-5 bg-white p-4 border border-blue-500 hover:border-pink-500 rounded-lg shadow-md max-w-2xl mx-auto">
       {/* Product Info */}
       <div className="flex justify-center items-center gap-4">
         <Image
@@ -48,7 +48,7 @@ export default function ShopingCart({ name, price, photo }: CartItemProps) {
           width={80}
           height={80}
           alt="photo"
-          className="w-20 h-20 object-cover rounded-md"
+          className="w-20 h-20 object-fill rounded-md"
         />
         <div className="text-center">
           <h4 className="font-semibold text-lg">{name}</h4>

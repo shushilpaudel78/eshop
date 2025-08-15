@@ -12,7 +12,7 @@ export default function Team() {
   return (
     <section className="py-16 pt-30 px-6 bg-white">
       <div className="max-w-6xl mx-auto text-center">
-        <h2 className="text-3xl font-bold mb-10">Meet Our Team</h2>
+        <h2 className="text-3xl font-bold mb-10">Our Team</h2>
         <div className="grid md:grid-cols-3 gap-10">
           {team.map((member, index) => (
             <div key={index} className="bg-gray-50 p-6 rounded-xl shadow-lg hover:shadow-2xl transition">

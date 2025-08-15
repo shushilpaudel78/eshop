@@ -54,7 +54,7 @@ export default function Checkout() {
               {cart.map((item, index) => (
                 <div
                   key={index}
-                  className="flex  items-center justify-between border-b pb-4 gap-4"
+                  className="flex  items-center justify-between border-b border-blue-500 border-b-2 last:border-none pb-4 gap-4"
                 >
                   {/* Product Info */}
                   <div className="flex items-center gap-4 w-full">
@@ -89,13 +89,13 @@ export default function Checkout() {
                   </div>
 
                   {/* Total Price & Delete */}
-                  <div className="text-right w-full flex gap-3 justify-end h-full items-center px-5 ">
+                  <div className="text-right w-full flex gap-3 items-center h-full justify-end h-full items-center px-5 ">
                     <p className="text-gray-800 font-semibold h-full">
                       ${(item.price * item.quantity).toFixed(2)}
                     </p>
                     <button
                       onClick={() => handleDelete(index)}
-                      className="text-red-500  h-full hover:text-red-700 text-sm mt-1 flex items-center gap-1"
+                      className="text-red-500  h-full hover:text-red-700 text-sm  flex items-center gap-1"
                     >
                       <FaTrash /> 
                     </button>
@@ -107,7 +107,7 @@ export default function Checkout() {
             </div>
 
             {/* Order Summary */}
-            <div className="mt-8 border-t text-right">
+            <div className="mt-8 border-t border-pink-500 border-t-2 text-right py-4">
               <h2 className="text-xl font-bold text-gray-800">
                 Total: ${total.toFixed(2)}
               </h2>

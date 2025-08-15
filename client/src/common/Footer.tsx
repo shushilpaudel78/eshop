@@ -11,7 +11,7 @@ export default function Footer() {
 
                 {/* Brand Info */}
                 <div>
-                    <h2 className="text-white text-2xl font-bold mb-4 text-uppercase">SP SHOP</h2>
+                    <h2 className="text-white text-2xl font-bold mb-4 text-uppercase">SP Electronic</h2>
                     <p className="text-sm">
                         Your one-stop destination for sustainable and eco-friendly products.
                     </p>

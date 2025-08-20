@@ -72,7 +72,7 @@ export default function Navbar() {
           </Link>
         </div>
 
-        <div className="text-white flex flex-wrap items-center  lg:flex-nowrap gap-4">
+        <div className="text-white pr-10 md:pr-0 flex flex-wrap items-center  lg:flex-nowrap gap-4">
 
           {cartCount > 0 && (
             <div className="relative flex  items-center justify-center w-10 h-10 bg-purple-600 hover:bg-purple-700 rounded-full transition cursor-pointer">
@@ -80,8 +80,10 @@ export default function Navbar() {
                 {cartCount}
               </span>
 
-              <Link href='/checkout'>
-                <FaCartArrowDown className="text-2xl  mr-10 md:mr-0 cursor-pointer" />
+              <Link href='/checkout'
+              className=""
+              >
+                <FaCartArrowDown className="text-2xl  md:mr-0 cursor-pointer" />
               </Link>
             </div>
           )}

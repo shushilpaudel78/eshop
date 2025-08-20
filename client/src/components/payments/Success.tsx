@@ -12,6 +12,13 @@ export default function Success() {
   useEffect(() => {
     setDimensions({ width: window.innerWidth, height: window.innerHeight });
   }, []);
+  
+
+  useEffect(() => {
+    // Clear cart after successful payment
+    localStorage.removeItem("cart");
+    window.dispatchEvent(new Event("cartUpdated")); // notify other components
+  }, []);
 
   return (
     <div className="relative min-h-screen flex items-center justify-center bg-gradient-to-br from-green-100 via-emerald-200 to-green-300">

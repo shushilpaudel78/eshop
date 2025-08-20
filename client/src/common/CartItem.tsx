@@ -52,7 +52,7 @@ export default function CartItem({ name, price, photo }: CartItemProps) {
         />
         <div className="text-center">
           <h4 className="font-semibold text-lg">{name}</h4>
-          <p className="text-gray-500 text-sm">${price}</p>
+          <p className="text-gray-500 text-sm">Rs {price}</p>
         </div>
       </div>
 
@@ -82,7 +82,7 @@ export default function CartItem({ name, price, photo }: CartItemProps) {
         </button>
 
         <div className="text-right">
-          <p className="font-semibold">${(price * quantity).toFixed(2)}</p>
+          <p className="font-semibold">Rs {(price * quantity).toFixed(2)}</p>
           
         </div>
       </div>

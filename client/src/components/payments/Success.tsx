@@ -4,6 +4,7 @@ import { motion } from "framer-motion";
 import { CheckCircle2 } from "lucide-react";
 import Confetti from "react-confetti";
 import { useEffect, useState } from "react";
+import Link from "next/link";
 
 export default function Success() {
   const [dimensions, setDimensions] = useState({ width: 0, height: 0 });
@@ -46,18 +47,18 @@ export default function Success() {
 
         {/* CTA Buttons */}
         <div className="mt-8 flex flex-col sm:flex-row items-center justify-center gap-4">
-          <a
+          <Link
             href="/"
             className="px-6 py-3 rounded-xl bg-green-600 text-white font-semibold hover:bg-green-700 transition shadow-lg"
           >
             Go Home
-          </a>
-          <a
-            href="/orders"
+          </Link>
+          <Link
+            href="/shop"
             className="px-6 py-3 rounded-xl border border-green-500 text-green-700 font-semibold hover:bg-green-50 transition"
           >
             View Orders
-          </a>
+          </Link>
         </div>
       </motion.div>
     </div>

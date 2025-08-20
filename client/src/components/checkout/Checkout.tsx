@@ -3,6 +3,7 @@
 import { useEffect, useState } from 'react';
 import Image from 'next/image';
 import { FaTrash, FaPlus, FaMinus } from 'react-icons/fa';
+import Link from 'next/link';
 
 type CartItem = {
   name: string;
@@ -87,7 +88,7 @@ export default function Checkout() {
                     />
                     <div>
                       <h2 className="text-lg font-semibold">{item.name}</h2>
-                      <p className="text-sm text-gray-600">${item.price}</p>
+                      <p className="text-sm text-gray-600">Rs{item.price}</p>
                     </div>
                   </div>
 
@@ -103,7 +104,7 @@ export default function Checkout() {
 
                   <div className="text-right w-full flex gap-3 items-center justify-end px-5">
                     <p className="text-gray-800 font-semibold">
-                      ${(item.price * item.quantity).toFixed(2)}
+                      Rs {(item.price * item.quantity).toFixed(2)}
                     </p>
                     <button onClick={() => handleDelete(index)} className="text-red-500 hover:text-red-700 flex items-center gap-1">
                       <FaTrash />
@@ -116,12 +117,13 @@ export default function Checkout() {
             {/* Order Summary */}
             <div className="mt-8 border-pink-500 border-t-2 text-right py-4">
               <h2 className="text-xl font-bold text-gray-800">
-                Total: ${total.toFixed(2)}
+                Total: Rs{total.toFixed(2)}
               </h2>
 
               {/* Esewa Form (only shows when esewaData is ready) */}
               {esewaData && (
                 <form
+                target='_blank'
                   action="https://rc-epay.esewa.com.np/api/epay/main/v2/form"
                   method="POST"
                 >

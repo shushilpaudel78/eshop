@@ -2,6 +2,7 @@
 
 import { motion } from "framer-motion";
 import { XCircle } from "lucide-react";
+import Link from "next/link";
 
 export default function Failure() {
   return (
@@ -35,18 +36,18 @@ export default function Failure() {
 
         {/* CTA Buttons */}
         <div className="mt-8 flex flex-col sm:flex-row items-center justify-center gap-4">
-          <a
+          <Link
             href="/"
             className="px-6 py-3 rounded-xl bg-red-600 text-white font-semibold hover:bg-red-700 transition shadow-lg"
           >
             Go Home
-          </a>
-          <a
+          </Link>
+          <Link
             href="/checkout"
             className="px-6 py-3 rounded-xl border border-red-500 text-red-700 font-semibold hover:bg-red-50 transition"
           >
             Retry Payment
-          </a>
+          </Link>
         </div>
       </motion.div>
     </div>
